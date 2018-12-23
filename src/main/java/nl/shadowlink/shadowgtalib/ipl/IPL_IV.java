@@ -174,7 +174,7 @@ public class IPL_IV {
 
 		if (wpl.stream) {
 			wpl.imgItem.setSize(wf.getFileSize() - wpl.imgItem.getOffset());
-			wpl.img.changed = true;
+			wpl.img.setChanged(true);
 		}
 
 		wf.closeFile();

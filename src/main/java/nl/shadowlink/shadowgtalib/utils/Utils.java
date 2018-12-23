@@ -171,28 +171,28 @@ public class Utils {
 		} else if (fileName.endsWith(".ide")) {
 			return Constants.ftIDE;
 		} else if (fileName.endsWith(".wdr")) {
-			img.wdrCount++;
+			img.setWdrCount(img.getWdrCount() + 1);
 			return Constants.ftWDR;
 		} else if (fileName.endsWith(".wdd")) {
-			img.wddCount++;
+			img.setWddCount(img.getWddCount() + 1);
 			return Constants.ftWDD;
 		} else if (fileName.endsWith(".wbn")) {
-			img.wbnCount++;
+			img.setWbnCount(img.getWbnCount() + 1);
 			return Constants.ftWBN;
 		} else if (fileName.endsWith(".wbd")) {
-			img.wbdCount++;
+			img.setWbdCount(img.getWbdCount() + 1);
 			return Constants.ftWBD;
 		} else if (fileName.endsWith(".wtd")) {
-			img.wtdCount++;
+			img.setWtdCount(img.getWtdCount() + 1);
 			return Constants.ftWTD;
 		} else if (fileName.endsWith(".wft")) {
-			img.wftCount++;
+			img.setWftCount(img.getWftCount() + 1);
 			return Constants.ftWFT;
 		} else if (fileName.endsWith(".wad")) {
-			img.wadCount++;
+			img.setWadCount(img.getWadCount() + 1);
 			return Constants.ftWAD;
 		} else if (fileName.endsWith(".wpl")) {
-			img.wplCount++;
+			img.setWplCount(img.getWplCount() + 1);
 			return Constants.ftWPL;
 		} else if (fileName.endsWith(".ifp")) {
 			return Constants.ftIFP;
