@@ -14,5 +14,7 @@
 
 .gradle/*
 
+build/*
+
 # Shadow-mapper settings
 settings.json

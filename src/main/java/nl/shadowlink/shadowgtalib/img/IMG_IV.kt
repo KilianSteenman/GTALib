@@ -206,10 +206,7 @@ class IMG_IV {
             // Message.displayMsgHigh(name);
         }
 
-        if (items.size > 0)
-            image.items = items
-        else
-            image.items = null
+        image.items = items
     }
 
     fun readEncryptedImg(test: ReadFunctions, img: IMG) {
@@ -297,10 +294,7 @@ class IMG_IV {
         // rf.closeFile();
         test.closeFile()
 
-        if (items.size > 0)
-            img.items = items
-        else
-            img.items = null
+        img.items = items
     }
 
     fun withIdent(test: ReadFunctions, key: ByteArray): ByteArray {

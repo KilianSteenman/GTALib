@@ -42,10 +42,6 @@ class IMG_VC {
 
         // Message.displayMsgHigh("Final Item Count: " + itemCount);
 
-        if (items.size > 0)
-            image.items = items
-        else
-            image.items = null
+        image.items = items
     }
-
 }

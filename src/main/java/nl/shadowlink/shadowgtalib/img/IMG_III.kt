@@ -40,12 +40,7 @@ class IMG_III {
             itemCount++
         }
 
+        image.items = items
         // Message.displayMsgHigh("Final Item Count: " + itemCount);
-
-        if (items.size > 0)
-            image.items = items
-        else
-            image.items = null
     }
-
 }

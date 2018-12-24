@@ -39,13 +39,14 @@ class IMG(var fileName: String?, var gameType: GameType?, key: ByteArray, autoLo
     var wftCount = 0
     var unknownCount = 0
 
-    var items: ArrayList<IMG_Item>? = ArrayList() // All items
+    var items: ArrayList<IMG_Item>? = ArrayList()
 
     init {
         this.key = key
         this.containsProps = containsProps
-        if (autoLoad)
+        if (autoLoad) {
             loadImg()
+        }
     }// Message.displayMsgSuper("Loading IMG: " + fileName);
 
     private fun loadImg(): Boolean {
@@ -54,43 +55,17 @@ class IMG(var fileName: String?, var gameType: GameType?, key: ByteArray, autoLo
             Constants.GameType.GTA_VC -> IMG_VC().loadImg(this)
             Constants.GameType.GTA_SA -> IMG_SA().loadImg(this)
             Constants.GameType.GTA_IV -> IMG_IV().loadImg(this)
+            else -> throw IllegalStateException("Gametype $gameType not supported")
         }
-        return if (items == null)
-            false
-        else
-            true
+        return items != null
     }
 
     fun getItemIndex(name: String): Int {
-        var i = 0
-        while (!items!![i].name!!.equals(name, ignoreCase = true)) {
-            if (i < items!!.size - 1) {
-                i++
-            } else {
-                break
-            }
-        }
-        return i
+        return items?.indexOfFirst { item -> item.name == name } ?: 0
     }
 
     fun findItem(name: String): IMG_Item? {
-        var ret: IMG_Item? = null
-        var i = 0
-        while (!items!![i].name!!.equals(name, ignoreCase = true)) {
-            if (i < items!!.size - 1) {
-                i++
-            } else {
-                break
-            }
-        }
-        if (items!![i].name!!.equals(name, ignoreCase = true)) {
-            // Message.displayMsgSuper("<IMG " + fileName + ">Found file " + name + " at " + i + " offset " +
-            // Items.get(i).getOffset());
-            ret = items!![i]
-        } else {
-            // Message.displayMsgSuper("<IMG " + fileName + ">Unable to find file " + name);
-        }
-        return ret
+        return items?.firstOrNull { item -> item.name == name }
     }
 
     fun addItem(mdl: Model, name: String) {
@@ -200,5 +175,4 @@ class IMG(var fileName: String?, var gameType: GameType?, key: ByteArray, autoLo
             Constants.GameType.GTA_IV -> IMG_IV().saveImg(this)
         }
     }
-
 }

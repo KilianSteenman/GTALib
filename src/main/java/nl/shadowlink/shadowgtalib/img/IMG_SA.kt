@@ -44,10 +44,7 @@ class IMG_SA {
             items.add(item)
         }
 
-        if (items.size > 0)
-            image.items = items
-        else
-            image.items = null
+        image.items = items
     }
 
     /* private void updateCounter(int itemType){ switch(itemType){ case 0: //modelCount++; break; } } */

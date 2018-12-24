@@ -6,7 +6,6 @@
 package nl.shadowlink.shadowgtalib.img
 
 /**
- *
  * @author Shadow-Link
  */
 class IMG_Item {
